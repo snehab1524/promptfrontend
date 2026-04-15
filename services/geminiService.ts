@@ -1,25 +1,36 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { API_BASE_URL } from '../api';
 
-// Always use named parameter for apiKey and direct process.env.API_KEY as per guidelines
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
-export const getAIFeedback = async (userPrompt: string, task: string) => {
+export const getAIFeedback = async (userPrompt: string, task: string): Promise<string> => {
   try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
-      contents: `User is learning Prompt Engineering. 
-      Task: ${task}
-      User's Attempt: "${userPrompt}"
-      Evaluate this prompt. Is it effective? Give 1 pro and 1 con in a friendly, encouraging way (max 50 words).`,
-      config: {
-        systemInstruction: "You are a professional Prompt Engineering Coach. Be concise, encouraging, and educational."
-      }
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('No auth token found. Please login.');
+    }
+
+    const response = await fetch(`${API_BASE_URL}/api/ai-feedback`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        userPrompt,
+        task,
+        model: 'gemini-3-flash-preview'
+      })
     });
-    // Use the .text property directly, do not call it as a method
-    return response.text;
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.message || `HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.feedback || 'Great effort! Keep practicing to refine your skills.';
+
   } catch (error) {
-    console.error("Gemini Error:", error);
+    console.error("AI Feedback Error:", error);
     return "Great effort! Keep practicing to refine your skills.";
   }
 };
