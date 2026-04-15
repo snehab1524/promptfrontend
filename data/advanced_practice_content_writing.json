@@ -1,0 +1,325 @@
+{
+  "practiceQuestions": [
+    {
+      "id": "acw_p1",
+      "type": "mcq",
+      "text": "When designing a brand voice prompt for a luxury company, what is most critical?",
+      "options": [
+        "High emotional storytelling",
+        "Consistency in tone, vocabulary, and exclusivity positioning",
+        "Using emojis frequently",
+        "Long descriptive paragraphs"
+      ],
+      "correctIndex": 1,
+      "explanation": "Luxury branding requires tone precision and exclusivity alignment."
+    },
+    {
+      "id": "acw_p2",
+      "type": "fill-in-the-blanks",
+      "text": "Providing competitor content samples before asking AI to differentiate tone improves brand ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "positioning",
+      "explanation": "Comparative context sharpens positioning strategy."
+    },
+    {
+      "id": "acw_p3",
+      "type": "prompt-writing",
+      "text": "Design a multi-step prompt that creates an SEO-optimized blog post including keyword clustering, meta description, and internal linking suggestions.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "SEO blog,keyword clustering,meta description,internal links",
+      "explanation": "Advanced SEO prompts require layered deliverables."
+    },
+    {
+      "id": "acw_p4",
+      "type": "mcq",
+      "text": "Why specify conversion goals (e.g., sign-up, purchase) in high-level content prompts?",
+      "options": [
+        "Increase word count",
+        "Align content with measurable objectives",
+        "Make writing creative",
+        "Reduce structure"
+      ],
+      "correctIndex": 1,
+      "explanation": "Conversion goals align messaging with outcomes."
+    },
+    {
+      "id": "acw_p5",
+      "type": "fill-in-the-blanks",
+      "text": "Asking AI to avoid exaggerated claims in health-related marketing improves legal ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "compliance",
+      "explanation": "Ethical and legal compliance is critical in regulated industries."
+    },
+    {
+      "id": "acw_p6",
+      "type": "prompt-writing",
+      "text": "Write a prompt that generates a persuasive landing page using AIDA framework, includes emotional triggers, and avoids generic clichés.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "landing page,AIDA,emotional triggers,avoid clichés",
+      "explanation": "Framework + emotional constraint improves persuasion."
+    },
+    {
+      "id": "acw_p7",
+      "type": "mcq",
+      "text": "Which strategy reduces AI-generated fluff in long-form content?",
+      "options": [
+        "Increase temperature",
+        "Add specific structural and word-count constraints",
+        "Remove instructions",
+        "Encourage creativity"
+      ],
+      "correctIndex": 1,
+      "explanation": "Precise constraints reduce unnecessary verbosity."
+    },
+    {
+      "id": "acw_p8",
+      "type": "fill-in-the-blanks",
+      "text": "Requesting audience pain-point analysis before content drafting improves content ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "relevance",
+      "explanation": "Understanding pain points enhances personalization."
+    },
+    {
+      "id": "acw_p9",
+      "type": "mcq",
+      "text": "What improves authenticity in thought-leadership articles?",
+      "options": [
+        "Using generic statements",
+        "Including unique insights and real-world examples",
+        "Avoiding structure",
+        "Increasing randomness"
+      ],
+      "correctIndex": 1,
+      "explanation": "Original perspectives increase authority."
+    },
+    {
+      "id": "acw_p10",
+      "type": "prompt-writing",
+      "text": "Create a prompt that audits an article for tone consistency, SEO optimization, readability score, and persuasive strength.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "audit,tone consistency,SEO,readability,persuasion",
+      "explanation": "Evaluation prompts require multi-dimensional criteria."
+    }
+  ],
+  
+  "finalTestQuestions": [
+    {
+      "id": "acw_f1",
+      "type": "mcq",
+      "text": "When designing AI prompts for conversion-focused landing pages, what is most critical?",
+      "options": [
+        "Creativity over clarity",
+        "Clear CTA alignment with user intent",
+        "Maximum word count",
+        "High temperature"
+      ],
+      "correctIndex": 1,
+      "explanation": "Conversion content must align with measurable user intent."
+    },
+    {
+      "id": "acw_f2",
+      "type": "fill-in-the-blanks",
+      "text": "Providing brand tone guidelines before content generation improves voice ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "consistency",
+      "explanation": "Brand guidelines prevent tone drift."
+    },
+    {
+      "id": "acw_f3",
+      "type": "prompt-writing",
+      "text": "Design a prompt that creates a pillar blog post with SEO keyword hierarchy, internal linking strategy, and structured headings.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "pillar blog,SEO hierarchy,internal linking,structured headings",
+      "explanation": "Advanced SEO requires structured multi-layer instructions."
+    },
+    {
+      "id": "acw_f4",
+      "type": "mcq",
+      "text": "Which technique reduces generic AI phrasing in thought leadership content?",
+      "options": [
+        "Increase randomness",
+        "Request unique perspective and industry-specific examples",
+        "Shorten prompt",
+        "Remove constraints"
+      ],
+      "correctIndex": 1,
+      "explanation": "Specificity and examples reduce generic tone."
+    },
+    {
+      "id": "acw_f5",
+      "type": "fill-in-the-blanks",
+      "text": "Specifying audience sophistication level improves message ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "precision",
+      "explanation": "Audience clarity sharpens communication."
+    },
+    {
+      "id": "acw_f6",
+      "type": "prompt-writing",
+      "text": "Write a prompt that generates a compliance-safe healthcare marketing article avoiding unverified claims.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "compliance-safe,avoid unverified claims,healthcare marketing",
+      "explanation": "Regulated industries require safety constraints."
+    },
+    {
+      "id": "acw_f7",
+      "type": "mcq",
+      "text": "Why define reading grade level in prompts?",
+      "options": [
+        "Increase tokens",
+        "Control comprehension difficulty",
+        "Add creativity",
+        "Reduce SEO quality"
+      ],
+      "correctIndex": 1,
+      "explanation": "Reading level ensures accessibility."
+    },
+    {
+      "id": "acw_f8",
+      "type": "fill-in-the-blanks",
+      "text": "Requesting benefit-driven framing improves persuasive ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "impact",
+      "explanation": "Benefits drive conversions."
+    },
+    {
+      "id": "acw_f9",
+      "type": "mcq",
+      "text": "Which constraint improves authenticity in brand storytelling?",
+      "options": [
+        "Avoid real examples",
+        "Incorporate case studies and data points",
+        "Increase temperature",
+        "Remove structure"
+      ],
+      "correctIndex": 1,
+      "explanation": "Data-backed storytelling builds credibility."
+    },
+    {
+      "id": "acw_f10",
+      "type": "prompt-writing",
+      "text": "Create a prompt that rewrites a corporate article into a conversational LinkedIn thought-leadership post while preserving key data.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "rewrite,LinkedIn thought leadership,preserve data,conversational tone",
+      "explanation": "Advanced rewriting requires tone + retention control."
+    },
+    {
+      "id": "acw_f11",
+      "type": "mcq",
+      "text": "What reduces verbosity in long-form AI content?",
+      "options": [
+        "High temperature",
+        "Section-wise word limits and clarity constraints",
+        "Vague instructions",
+        "Remove headings"
+      ],
+      "correctIndex": 1,
+      "explanation": "Word limits maintain conciseness."
+    },
+    {
+      "id": "acw_f12",
+      "type": "fill-in-the-blanks",
+      "text": "Providing competitor positioning context improves brand ______ strategy.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "differentiation",
+      "explanation": "Competitive context sharpens unique positioning."
+    },
+    {
+      "id": "acw_f13",
+      "type": "mcq",
+      "text": "Why include measurable KPIs in content prompts?",
+      "options": [
+        "Increase randomness",
+        "Align with performance tracking",
+        "Add complexity",
+        "Reduce clarity"
+      ],
+      "correctIndex": 1,
+      "explanation": "KPIs ensure measurable outcomes."
+    },
+    {
+      "id": "acw_f14",
+      "type": "fill-in-the-blanks",
+      "text": "Avoiding absolute claims in financial content ensures regulatory ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "compliance",
+      "explanation": "Finance content must respect regulations."
+    },
+    {
+      "id": "acw_f15",
+      "type": "prompt-writing",
+      "text": "Design a prompt that audits blog performance based on SEO, readability, tone consistency, and CTA effectiveness.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "audit,SEO,readability,tone consistency,CTA effectiveness",
+      "explanation": "Evaluation prompts must define clear metrics."
+    },
+    {
+      "id": "acw_f16",
+      "type": "mcq",
+      "text": "Which method improves authority perception in AI-written articles?",
+      "options": [
+        "Generic statements",
+        "Expert quotes and cited data",
+        "Long paragraphs",
+        "Higher temperature"
+      ],
+      "correctIndex": 1,
+      "explanation": "Credible sources boost authority."
+    },
+    {
+      "id": "acw_f17",
+      "type": "fill-in-the-blanks",
+      "text": "Requesting emotional triggers aligned with user pain points improves conversion ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "rates",
+      "explanation": "Emotionally aligned messaging drives action."
+    },
+    {
+      "id": "acw_f18",
+      "type": "mcq",
+      "text": "Why use hierarchical prompting for large content assets?",
+      "options": [
+        "Increase randomness",
+        "Ensure structured development from outline to final draft",
+        "Reduce tokens",
+        "Add fluff"
+      ],
+      "correctIndex": 1,
+      "explanation": "Layered prompts improve structure and coherence."
+    },
+    {
+      "id": "acw_f19",
+      "type": "prompt-writing",
+      "text": "Write a prompt that generates a data-backed case study highlighting ROI improvements.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "case study,data-backed,ROI improvements",
+      "explanation": "Case study prompts require metric-driven structure."
+    },
+    {
+      "id": "acw_f20",
+      "type": "fill-in-the-blanks",
+      "text": "Specifying structured storytelling arcs improves narrative ______.",
+      "options": [],
+      "correctIndex": -1,
+      "correctAnswer": "flow",
+      "explanation": "Story arcs enhance engagement."
+    }
+  ]
+}

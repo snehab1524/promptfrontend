@@ -1,0 +1,133 @@
+/*#background{
+    min-width: 100vw;
+    width: auto;
+    min-height: 100vh;
+    height: auto;
+    /*background-image: url("./assets/prompt-engineering.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: bgChange 25s infinite;
+}
+@keyframes bgChange {
+  0% {
+    background-image: url("./assets/prompt-engineering.png");
+  }
+  25% {
+    background-image: url("./assets/prompt.jpg");
+  }
+  50% {
+    background-image: url("./assets/prompt2.jpg");
+  }
+  75% {
+    background-image: url("./assets/prompt3.jpg");
+  }
+  100% {
+    background-image: url("./assets/Prompt-Engineering4.jpg");
+  }
+}*/
+
+#background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 1;
+  animation: fadeSlide 16s infinite, zoom 16s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes fadeSlide {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+#background::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+#logdd{
+  background-image: url("./assets/signup.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#regist{
+  background-image: url("./assets/signup.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+#btn1 {
+    background: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: 0.7s;
+}
+
+#btn1:hover {
+    color: black;
+    background-color: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+}
+
+#video {
+    color: black;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+    transition: 0.7s;
+   
+    border-radius: 30px;
+}
+
+#video:hover {
+    background: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#video2 {
+    color: black;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+    transition: 0.7s;
+   
+    border-radius: 30px;
+}
+
+#video2:hover {
+    background: black;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PromptMaster Pro",
+  "description": "A comprehensive, multi-level Prompt Engineering educational platform featuring interactive learning, assessments, Aadhaar verification, and digital certification.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
