@@ -40,7 +40,7 @@ const Register = () => {
     if (e) e.preventDefault();
 
     try {
-      await axios.post(`${API_BASE_URL}/send-otp`, {
+      const response = await axios.post(`${API_BASE_URL}/send-otp`, {
         fullName,
         email,
         password
@@ -49,10 +49,16 @@ const Register = () => {
       setShowOtpForm(true);
       setTimer(120);
       setIsCounting(true);
-      alert("OTP sent to your email");
+      
+      if (response.data.status === 'otp_generated_email_failed') {
+        alert("OTP generated! Check server logs - email delivery failed. Try verify anyway.");
+      } else {
+        alert("✅ OTP sent to your email! Check inbox/spam.");
+      }
 
     } catch (err) {
-      alert("Failed to send OTP");
+      console.error("Send OTP error:", err.response?.data || err);
+      alert(err.response?.data?.message || "Failed to send OTP. Server running?");
     }
   };
 
@@ -63,11 +69,12 @@ const Register = () => {
         otp
       });
 
-      alert("Registration Successful ✅");
+      alert("Registration Successful ✅ Welcome to AIINSIGHT!");
       resetForm();
       navigate("/login");
 
     } catch (err) {
+      console.error("Verify OTP error:", err.response?.data || err);
       alert(err.response?.data?.message || "Invalid or Expired OTP");
     }
   };
