@@ -14,46 +14,49 @@ const Userlogin = ({ onLoginSuccess }) => {
     try {
       const loginuser = { email, password };
 
-      const res = await axios.post(
+      const loginRes = await axios.post(
         `${API_BASE_URL}/user-login`,
         loginuser
       );
 
-      // Fetch admin status from backend
-      const adminRes = await axios.get(`${API_BASE_URL}/admin-status`, {
-        headers: { Authorization: `Bearer ${res.data.token}` }
-      });
-      localStorage.setItem('token', res.data.token);
+      // Parallel: admin check while processing login data
+      const [adminRes] = await Promise.all([
+        axios.get(`${API_BASE_URL}/admin-status`, {
+          headers: { Authorization: `Bearer ${loginRes.data.token}` }
+        })
+      ]);
+
+      localStorage.setItem('token', loginRes.data.token);
       localStorage.setItem('isAdmin', adminRes.data.isAdmin.toString());
       if (adminRes.data.isAdmin) {
         navigate('/admin');
         return;
       }
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      localStorage.setItem("token", loginRes.data.token);
+      localStorage.setItem("user", JSON.stringify(loginRes.data.user));
       
       // Check if user has purchased a course
-      const hasPurchasedCourse = res.data.courseName && res.data.payment_verified === "Payment Done";
+      const hasPurchasedCourse = loginRes.data.courseName && loginRes.data.payment_verified === "Payment Done";
       
       if (hasPurchasedCourse) {
         // User has purchased a course - save and go to Dashboard
         const loginData = {
-          user: res.data.user,
-          progress: res.data.progress,
-          payment_verified: res.data.payment_verified,
-          courseName: res.data.courseName,
-          selectedDomain: res.data.selectedDomain,
+          user: loginRes.data.user,
+          progress: loginRes.data.progress,
+          payment_verified: loginRes.data.payment_verified,
+          courseName: loginRes.data.courseName,
+          selectedDomain: loginRes.data.selectedDomain,
         };
 
         localStorage.setItem(
           "prompt_master_data",
           JSON.stringify({
-            profile: res.data.user,
-            progress: res.data.progress,
-            payment_verified: res.data.payment_verified,
-            courseName: res.data.courseName,
-            selectedDomain: res.data.selectedDomain,
+            profile: loginRes.data.user,
+            progress: loginRes.data.progress,
+            payment_verified: loginRes.data.payment_verified,
+            courseName: loginRes.data.courseName,
+            selectedDomain: loginRes.data.selectedDomain,
           })
         );
 
@@ -66,15 +69,15 @@ const Userlogin = ({ onLoginSuccess }) => {
         // User hasn't purchased course - DON'T save full data, just user info
         // This will cause App.tsx to show RegistrationForm (registration state)
         const loginData = {
-          user: res.data.user,
-          progress: res.data.progress || {},
+          user: loginRes.data.user,
+          progress: loginRes.data.progress || {},
         };
 
         localStorage.setItem(
           "prompt_master_data",
           JSON.stringify({
-            profile: res.data.user,
-            progress: res.data.progress || {},
+            profile: loginRes.data.user,
+            progress: loginRes.data.progress || {},
           })
         );
 
