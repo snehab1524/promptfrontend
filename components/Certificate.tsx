@@ -59,18 +59,13 @@ const Certificate: React.FC<Props> = ({
   const downloadCertificate = () => {
     const element = document.getElementById('certificate-area');
     if (!element) return;
-    
-    const actionButtons = document.querySelector('.certificate-actions') as Element | null;
-    
+
     html2pdf()
       .set({
         margin: 0,
         filename: `Certificate-${certId}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-          scale: 2,
-          ignoreElements: (el) => el === actionButtons
-        },
+        html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
       })
       .from(element)
@@ -234,7 +229,7 @@ useEffect(() => {
       </div>
 
       {/* ================= ACTION BUTTONS ================= */}
-      <div className="certificate-actions mt-10">
+      <div className="mt-10">
         <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-3xl mx-auto">
           <button
             onClick={downloadCertificate}

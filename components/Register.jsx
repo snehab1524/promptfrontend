@@ -16,6 +16,9 @@ const Register = () => {
   const [showOtpForm, setShowOtpForm] = useState(false);
   const [timer, setTimer] = useState(120);
   const [isCounting, setIsCounting] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+
 
   useEffect(() => {
     let interval;
@@ -38,8 +41,10 @@ const Register = () => {
 
   const handelRegister = async (e) => {
     if (e) e.preventDefault();
+    setIsLoading(true);
 
     try {
+
       const response = await axios.post(`${API_BASE_URL}/send-otp`, {
         fullName,
         email,
@@ -59,11 +64,16 @@ const Register = () => {
     } catch (err) {
       console.error("Send OTP error:", err.response?.data || err);
       alert(err.response?.data?.message || "Failed to send OTP. Server running?");
+    } finally {
+      setIsLoading(false);
     }
   };
 
+
   const handleVerifyOtp = async () => {
+    setIsLoading(true);
     try {
+
       await axios.post(`${API_BASE_URL}/verify-otp`, {
         email,
         otp
@@ -76,8 +86,11 @@ const Register = () => {
     } catch (err) {
       console.error("Verify OTP error:", err.response?.data || err);
       alert(err.response?.data?.message || "Invalid or Expired OTP");
+    } finally {
+      setIsLoading(false);
     }
   };
+
 
   return (
     <div className="register-wrapper">
@@ -125,9 +138,10 @@ const Register = () => {
                 />
               </div>
 
-              <button type="submit" className="primary-btn">
-                Register
+              <button type="submit" className="primary-btn" disabled={isLoading}>
+                {isLoading ? "Sending OTP..." : "Register"}
               </button>
+
 
             </form>
           </>
@@ -152,11 +166,12 @@ const Register = () => {
 
             <button
               onClick={handleVerifyOtp}
-              disabled={timer === 0}
+              disabled={timer === 0 || isLoading}
               className="primary-btn"
             >
-              Verify & Register
+              {isLoading ? "Verifying..." : "Verify & Register"}
             </button>
+
 
             {timer === 0 && (
               <button
