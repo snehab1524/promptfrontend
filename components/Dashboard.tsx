@@ -107,7 +107,7 @@ const getCertIdByLevel = (levelId: string) => {
       alert("Certificate not found - complete the level first");
       return;
     }
-    navigate("/verify", { state: { certId, levelId, course } });
+    navigate("/verify", { state: { certId, levelId, courseName: course } });
   };
 
   // Handle payment click

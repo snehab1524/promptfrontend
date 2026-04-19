@@ -7,10 +7,12 @@ const Userlogin = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const loginuser = { email, password };
 
@@ -89,6 +91,8 @@ const Userlogin = ({ onLoginSuccess }) => {
       }
     } catch (err) {
       alert("Login failed");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -125,8 +129,8 @@ const Userlogin = ({ onLoginSuccess }) => {
             />
           </div>
 
-          <button type="submit" className="primary-btn">
-            Login
+          <button type="submit" className="primary-btn" disabled={isLoading}>
+            {isLoading ? "Logging in..." : "Login"}
           </button>
 
         </form>
@@ -218,6 +222,17 @@ const Userlogin = ({ onLoginSuccess }) => {
 
         .primary-btn:hover {
           background: #e5e5e5;
+        }
+
+        .primary-btn:disabled {
+          background: #ccc;
+          color: #666;
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+
+        .primary-btn:disabled:hover {
+          background: #ccc;
         }
 
         .footer-text {

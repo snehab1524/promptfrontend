@@ -471,7 +471,9 @@ const VerifyCertificate: React.FC<Props> = ({ onCompleteLevel }) => {
   const downloadCertificate = () => {
     const element = document.getElementById('certificate-area');
     if (!element) return;
-
+    
+    const actionButtons = document.querySelector('.certificate-actions') as Element | null;
+    
     html2pdf()
       .set({
         margin: 0,
@@ -480,7 +482,8 @@ const VerifyCertificate: React.FC<Props> = ({ onCompleteLevel }) => {
         html2canvas: {
           scale: 3,
           useCORS: true,
-          scrollY: 0
+          scrollY: 0,
+          ignoreElements: (el) => el === actionButtons
         },
         jsPDF: {
           unit: 'px',
@@ -531,7 +534,7 @@ const VerifyCertificate: React.FC<Props> = ({ onCompleteLevel }) => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8" style={{ borderRadius: "30px", boxShadow: "0 10px 38px rgba(0,0,0,0.6)" }}>
 
         {/* LEFT SIDE — CERTIFICATE */}
-        <div id='certificate-area' className="md:col-span-3 bg-white shadow-lg rounded-xl p-6">
+        <div className="md:col-span-3 bg-white shadow-lg rounded-xl p-6">
           <Certificate
             learnerName={resolvedLearnerName}
             courseLevel={completedCourseName || "Completed Course"}
